@@ -129,12 +129,12 @@ class PagarMe
      * @param string $apiKey
      * @param int|null $timeout
      */
-    public function __construct($apiKey, $timeout = null)
+    public function __construct($apiKey, $timeout = null, $baseUrl='https://api.pagar.me/1/')
     {
         $this->client = new Client(
             new GuzzleClient(
                 [
-                    'base_url' => 'https://api.pagar.me/1/'
+                    'base_url' => $baseUrl
                 ]
             ),
             $apiKey,
